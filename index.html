@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A compact English-Chinese bilateral word lookup app.">
+    <title>Dict Learn 2</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="lookup-panel" aria-label="Dictionary lookup">
+        <div class="header">
+          <div>
+            <p class="eyebrow">English - Chinese</p>
+            <h1>Dict Learn 2</h1>
+          </div>
+          <button class="icon-button" id="swapButton" type="button" title="Switch lookup direction" aria-label="Switch lookup direction">
+            ⇄
+          </button>
+        </div>
+
+        <div class="controls">
+          <div class="segmented" role="tablist" aria-label="Lookup direction">
+            <button class="active" id="modeEn" type="button" role="tab" aria-selected="true">EN to 中文</button>
+            <button id="modeZh" type="button" role="tab" aria-selected="false">中文 to EN</button>
+          </div>
+
+          <label class="search-label" for="searchInput">Search word</label>
+          <div class="search-row">
+            <input id="searchInput" type="search" autocomplete="off" placeholder="Type a word, e.g. learn">
+            <button id="clearButton" type="button" title="Clear search" aria-label="Clear search">×</button>
+          </div>
+        </div>
+
+        <div class="stats" aria-live="polite">
+          <span id="resultCount">0 matches</span>
+          <span id="modeLabel">English to Chinese</span>
+        </div>
+
+        <section class="results" id="results" aria-label="Lookup results"></section>
+      </section>
+
+      <aside class="study-panel" aria-label="Study list">
+        <h2>Study List</h2>
+        <div id="favorites" class="favorites empty">No saved words yet.</div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
